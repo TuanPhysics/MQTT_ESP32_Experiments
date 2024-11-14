@@ -3,7 +3,7 @@
 #include "secrets/wifi.h"
 #include "wifi_connect.h"
 #include <WiFiClientSecure.h>
-#include "ca_cert.h"
+#include "ca_cert_hivemq.h"
 
 #include "secrets/mqtt.h"
 #include <PubSubClient.h>
@@ -50,7 +50,7 @@ void mqttReconnect()
         Serial.println("Attempting MQTT connection...");
         String client_id = "esp32-client-";
         client_id += String(WiFi.macAddress());
-        if (mqttClient.connect(client_id.c_str(), MQTT::username, MQTT::password))
+        if (mqttClient.connect(client_id.c_str(), HiveMQ::username, HiveMQ::password))
         {
             Serial.print(client_id);
             Serial.println(" connected");
@@ -77,13 +77,14 @@ void setup()
     // mqttClient.setSocketTimeout(socketTimeout); // To see how long mqttClient detects the TCP connection is lost
 
     mqttClient.setCallback(mqttCallback);
-    mqttClient.setServer(MQTT::broker, MQTT::port);
+    mqttClient.setServer(HiveMQ::broker, HiveMQ::port);
     mqttPulishTicker.attach(1, mqttPublish);
 }
 
 void loop()
 {
-    if (!mqttClient.connected())
+    // if (!mqttClient.connected() && WiFi.status() == WL_CONNECTED) // In practice.
+    if (!mqttClient.connected()) // For this experiment purpose only.
     {
         mqttReconnect();
     }
