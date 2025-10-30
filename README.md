@@ -1,7 +1,7 @@
 # Các dự án thực hành với giao thức MQTT trên ESP32
 
 Đầu tiên nên cài đặt một client trên PC như EMQX client - [MQTTX](https://mqttx.app/downloads) và thử kết nối với các dịch vụ MQTT miễn phí để test thử trên PC trước.
-Sử dụng thư viện PubSubClient by Nick O’Leary trên ESP32/PIO.
+Sử dụng thư viện [PubSubClient by Nick O’Leary](https://github.com/knolleary/pubsubclient) trên ESP32/PIO.
 
 Có 3 thư mục con trong Repo này:
 
