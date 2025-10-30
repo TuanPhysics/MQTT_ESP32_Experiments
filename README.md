@@ -1,7 +1,8 @@
 # Các dự án thực hành với giao thức MQTT trên ESP32
 
-Đầu tiên nên cài đặt một client trên PC như EMQX client - [MQTTX](https://mqttx.app/downloads) và thử kết nối với các dịch vụ MQTT miễn phí để test thử trên PC trước.
-Sử dụng thư viện [PubSubClient by Nick O’Leary](https://github.com/knolleary/pubsubclient) trên ESP32/PIO.
+- Đầu tiên nên cài đặt một client trên PC như EMQX client - [MQTTX](https://mqttx.app/downloads) và thử kết nối với các dịch vụ MQTT miễn phí để test thử trên PC trước.
+- Sử dụng thư viện [PubSubClient by Nick O’Leary](https://github.com/knolleary/pubsubclient) trên ESP32/PIO.
+- Thực tập này tôi sẽ biểu diễn trên một công cụ mô phỏng phần cứng tích hợp với VS code là Wokwi. Bạn có thể đọc tài liệu hướng dẫn về công cụ Wokwi trên VSCode tại [đây](Wokwi_VScode_Notes.md).
 
 Có 3 thư mục con trong Repo này:
 
